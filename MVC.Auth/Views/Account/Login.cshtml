@@ -1,23 +1,40 @@
-﻿@{
-    Layout = "_AuthLayout";
+﻿@model MvcAuthDemo.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
 }
 
-@model LoginViewModel
-<h2>Account Login</h2>
+<div class="row justify-content-center my-5">
+    <div class="col-md-5 col-lg-4">
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+            <div class="card-header text-white text-center py-4" style="background: linear-gradient(135deg, #dc3545, #b02a37);">
+                <h4 class="fw-bold mb-0">Welcome Back</h4>
+                <small class="text-white-50">Please sign in to continue</small>
+            </div>
+            <div class="card-body p-4 bg-white">
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 small border-0 bg-danger-subtle text-danger" role="alert"></div>
 
-<form asp-action="Login" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label text-secondary fw-semibold small"></label>
+                        <input asp-for="Email" class="form-control form-control-lg bg-light border-1 border-secondary-subtle" placeholder="name@example.com" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label text-secondary fw-semibold small"></label>
+                        <input asp-for="Password" class="form-control form-control-lg bg-light border-1 border-secondary-subtle" placeholder="••••••••" />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger btn-lg w-100 fw-bold shadow-sm mt-2" style="background-color: #dc3545; border: none;">
+                        Sign In
+                    </button>
+                </form>
+            </div>
+            <div class="card-footer bg-light border-0 text-center py-3">
+                <a asp-action="ForgotPassword" class="text-danger text-decoration-none small fw-semibold">Forgot your password?</a>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Password" class="control-label"></label>
-        <input asp-for="Password" class="form-control" type="password" />
-        <span asp-validation-for="Password" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Login" class="btn btn-primary" />
-    </div>  
-</form>
+</div>

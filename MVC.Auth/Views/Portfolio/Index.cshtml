@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+      
+
+
+        <div class="p-4 p-md-5 mb-4 rounded-4 text-white shadow-lg" style="background: linear-gradient(135deg, #dc3545, #901f2a);">
+            <div class="col-md-8 px-0">
+                <span class="badge bg-white text-danger fw-bold mb-2">Protected Area</span>
+                <h1 class="display-5 fw-bold">Welcome, @User.Identity?.Name!</h1>
+                <p class="lead my-3">This is your guarded portfolio overview. Only authenticated users can access this screen.</p>
+                <a asp-controller="Account" asp-action="ChangePassword" class="btn btn-light text-danger fw-bold px-4 py-2 mt-2 shadow-sm">
+                     Change Password
+                </a>
+            </div>
+        </div>
+
+      
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-3 h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-danger-subtle text-danger p-2 rounded-3 me-3">
+                                
+                            </div>
+                            <h5 class="card-title mb-0 fw-bold">Project Alpha</h5>
+                        </div>
+                        <p class="card-text text-muted">Internal analytics platform developed with ASP.NET Core MVC and Bootstrap UI.</p>
+                        <span class="badge bg-success-subtle text-success">Completed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-3 h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-danger-subtle text-danger p-2 rounded-3 me-3">
+                                
+                            </div>
+                            <h5 class="card-title mb-0 fw-bold">Project Beta</h5>
+                        </div>
+                        <p class="card-text text-muted">Authentication and authorization service module with lockout protection.</p>
+                        <span class="badge bg-warning-subtle text-warning-emphasis">In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
